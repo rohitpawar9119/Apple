@@ -1,0 +1,11 @@
+show databases
+show dbs
+
+
+
+
+
+G
+
+}
+
