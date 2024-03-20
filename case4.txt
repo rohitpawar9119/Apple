@@ -1,0 +1,119 @@
+show databases
+show dbs
+
+create new database and switch database
+use [databasename]
+
+show current database
+db
+
+delete database
+db.dropDatabase()
+
+create collection 
+db.createCollection('students')
+
+view all collections
+show collections;
+
+delete collections
+db.[collectionName].drop()
+
+insert documents
+
+{
+    field: value1
+    field: value2
+    .....
+
+
+
+G
+
+}
+
+BSON 
+JSON 
+
+db.[collectionName].insert({
+    Name : "subham",
+    course : "python",
+    age : 23
+})
+db.students.insert({
+    Name : "subham",
+    course : "python",
+    age : 23
+})
+db.students.insert({_id : 123, Name : "subham",course : "python",age : 23})
+
+
+Insert Many Documnets
+
+db.students.insertMany([
+    {_id : 1, Name : "yugant",course : "java",age : 24},
+    {_id: 2 , Name : "kumar" , course : "php" ,age : 23},
+    {_id: 3 , Name : "saud" , course : "html" ,age : 25}
+    ])
+
+
+view documents 
+
+db.[collectionName].find()
+
+View Documnets With pretty Method
+
+db.[collectionName].pretty()
+
+search in documents
+
+db.[collectionName].find({condition})
+db.students.find({_id : 1})
+
+use limit method
+limit()
+
+db.[collectionName].find().limit(2);
+
+use count method
+
+count()
+db.[collectionName].find().count()
+
+use find one method
+
+db.[collectionName].findOne()
+db.students.findOne()
+
+update any row 
+
+db.[collectionName].update({condition}, {$set:{field}});
+db.students.update({Name:"subham"}, {$set{Name: "yati"}});
+db.students.updateMany({Name:"subham"}, {$set{Name: "yati"}});
+
+db.students.updateMany({Name:"ali"}, {$set:{Name : "subham kumar", "course: "javaScript"}});
+
+delete  documents
+
+db.[collectionName].deleteOne({condition});
+db.students.deleteOne({Name: "subham kumar"});
+db.students.remove({Name: "subham kumar"});
+
+
+
+opertors in mongodb
+
+greater than opertor
+db.students.remove({_id: {$gt : 25}});
+
+less than opertor
+db.students.remove({_id: {$lt : 25}});
+
+equal operator
+db.students.find({_id :{$eq : 1}})
+
+operator Link for other :-
+https://www.mongodb.com/docs/manual/reference/operator/query/
+
+
+
